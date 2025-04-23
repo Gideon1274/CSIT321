@@ -454,42 +454,42 @@ const Dashboard = () => {
               {/* Event Calendar and To-Do List Row */}
               <Grid container spacing={3} sx={{ mb: 4 }}>
                 {/* Event Calendar */}
-                <Grid item xs={12} md={6}>
-                  <Fade in={true} timeout={900}>
-                    <StyledCard sx={{ height: '100%' }}>
-                      <CardContent>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                          <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                            Event Calendar
-                          </Typography>
-                          <Tooltip title="Sync with Google Calendar">
-                            <Button variant="outlined" startIcon={<GoogleIcon />} size="small" color="primary">
-                              Sync
-                            </Button>
-                          </Tooltip>
-                        </Box>
-                        {events.map((event) => ( // <--- Mapping through the 'events' state
-                          <Box key={event.id} sx={{ bgcolor: 'action.hover', p: 2, borderRadius: 1, mb: 2 }}>
-                            <Typography variant="subtitle1" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                              {event.name} {/* Display event name */}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                              {event.dateTime ? event.dateTime.toLocaleString() : 'No Date/Time'} {/* Display date and time */}
-                              {event.deadline && (
-                                <Typography variant="caption" color="text.secondary">
-                                  Deadline: {event.deadline.toLocaleString()}
-                                </Typography>
-                              )}
-                            </Typography>
-                          </Box>
-                        ))}
-                        <Button variant="text" startIcon={<AddIcon />} color="primary" onClick={handleAddEventDialogOpen}>
-                          Add Event
+            <Grid item xs={12} md={6}>
+              <Fade in={true} timeout={900}>
+                <StyledCard sx={{ height: '100%' }}>
+                  <CardContent>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                      <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary' }}>
+                        Event Calendar
+                      </Typography>
+                      <Tooltip title="Sync with Google Calendar">
+                        <Button variant="outlined" startIcon={<GoogleIcon />} size="small" color="primary">
+                          Sync
                         </Button>
-                      </CardContent>
-                    </StyledCard>
-                  </Fade>
-                </Grid>
+                      </Tooltip>
+                    </Box>
+                    {events.map((event) => ( // <--- Mapping through the 'events' state
+                      <Box key={event.id} sx={{ bgcolor: 'action.hover', p: 2, borderRadius: 1, mb: 2 }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 600, color: 'text.primary' }}>
+                          {event.name} {/* Display event name */}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {event.dateTime ? event.dateTime.toLocaleString() : 'No Date/Time'} {/* Display date and time */}
+                          {event.deadline && (
+                            <Typography variant="caption" color="text.secondary">
+                              Deadline: {event.deadline.toLocaleString()}
+                            </Typography>
+                          )}
+                        </Typography>
+                      </Box>
+                    ))}
+                    <Button variant="text" startIcon={<AddIcon />} color="primary" onClick={handleAddEventDialogOpen}>
+                      Add Event
+                    </Button>
+                  </CardContent>
+                </StyledCard>
+              </Fade>
+            </Grid>
 
                 {/* To-Do List */}
                 <Grid item xs={12} md={6}>
